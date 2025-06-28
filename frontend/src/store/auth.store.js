@@ -10,7 +10,7 @@ export const useAuthStore = create((set, get) => ({
   signup: async (name, email, password) => {
     set({ loading: true });
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", {
+      const res = await axios.post("https://promptpal-backend.onrender.com/api/auth/signup", {
         name,
         email,
         password,
@@ -31,7 +31,7 @@ export const useAuthStore = create((set, get) => ({
   login: async (email, password) => {
     set({ loading: true });
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://promptpal-backend.onrender.com/api/auth/login", {
         email,
         password,
       });
@@ -50,7 +50,7 @@ export const useAuthStore = create((set, get) => ({
   logout: async () => {
     set({ loading: true });
     try {
-      await axios.post("http://localhost:5000/api/auth/logout");
+      await axios.post("https://promptpal-backend.onrender.com/api/auth/logout");
       set({ user: null, loading: false, err: null, conversationHistory: [] });
     } catch (error) {
       console.log("Error in auth store-logout");
@@ -65,7 +65,7 @@ export const useAuthStore = create((set, get) => ({
     set({ loading: true });
     try {
       console.log("Checking authentication...");
-      const res = await axios.get("http://localhost:5000/api/auth/checkAuth");
+      const res = await axios.get("https://promptpal-backend.onrender.com/api/auth/checkAuth");
       console.log("Auth check successful:", res.data);
       set({ user: res.data.user, loading: false, err: null });
       return true;
@@ -86,7 +86,7 @@ export const useAuthStore = create((set, get) => ({
       formData.append("assistantImage", assistantImage);
 
       const res = await axios.put(
-        "http://localhost:5000/api/auth/update-assistant",
+        "https://promptpal-backend.onrender.com/api/auth/update-assistant",
         formData,
         {
           headers: {
@@ -108,7 +108,7 @@ export const useAuthStore = create((set, get) => ({
 
   getGeminiResponse: async (prompt) => {
     try {
-      const res = await axios.post("http://localhost:5000/api/gemini", {
+      const res = await axios.post("https://promptpal-backend.onrender.com/api/gemini", {
         prompt,
       });
 
