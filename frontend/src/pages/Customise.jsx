@@ -133,18 +133,11 @@ const Customise = () => {
 
             <div className='space-y-6'>
               <div className='flex items-start space-x-4'>
-                <div className='w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm font-mono flex-shrink-0 mt-1'>
-                  1
-                </div>
-                <div>
-                  <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>LOGIN TO SYSTEM</h4>
-                  <p className='text-gray-300 font-mono text-sm'>Access your account using email and password credentials</p>
-                </div>
               </div>
 
               <div className='flex items-start space-x-4'>
                 <div className='w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm font-mono flex-shrink-0 mt-1'>
-                  2
+                  1
                 </div>
                 <div>
                   <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>CONFIGURE ASSISTANT</h4>
@@ -154,7 +147,7 @@ const Customise = () => {
 
               <div className='flex items-start space-x-4'>
                 <div className='w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm font-mono flex-shrink-0 mt-1'>
-                  3
+                  2
                 </div>
                 <div>
                   <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>VOICE ACTIVATION</h4>
@@ -167,7 +160,7 @@ const Customise = () => {
 
               <div className='flex items-start space-x-4'>
                 <div className='w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm font-mono flex-shrink-0 mt-1'>
-                  4
+                  3
                 </div>
                 <div>
                   <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>ENJOY INTERACTION</h4>
@@ -178,7 +171,8 @@ const Customise = () => {
 
             <div className='mt-8 p-4 bg-cyan-900/20 border border-cyan-400/30 rounded-lg'>
               <h5 className='text-cyan-400 font-mono font-bold mb-2'>💡 TIP</h5>
-              <p className='text-gray-300 text-sm font-mono'>Make sure your microphone is enabled and speak clearly for best results. Ask e.g. Search Take Your Forward On Youtube , Whats The Weather Today? , Search for 'Mahi Singh JSSATE' On Chrome etc...</p>
+              <p className='text-gray-300 text-sm font-mono'>Make sure your microphone is enabled and speak clearly for best results. Also Enable Popup Redirect To Other Sites. 
+                <br></br> Sample Prompts: Search for Take you Forward in youtube, Search for 'Mahi Singh JSSATE' on chrome, Whats The Weather Today etc</p>
             </div>
           </div>
         </div>
