@@ -137,8 +137,8 @@ const Customise = () => {
                   1
                 </div>
                 <div>
-                  <h4 className='text-cyan-400 text-2xl font-mono font-bold mb-2'>LOGIN TO SYSTEM</h4>
-                  <p className='text-gray-300 font-mono text-lg'>Access your account using email and password credentials</p>
+                  <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>LOGIN TO SYSTEM</h4>
+                  <p className='text-gray-300 font-mono text-sm'>Access your account using email and password credentials</p>
                 </div>
               </div>
 
@@ -147,8 +147,8 @@ const Customise = () => {
                   2
                 </div>
                 <div>
-                  <h4 className='text-cyan-400 text-2xl font-mono font-bold mb-2'>CONFIGURE ASSISTANT</h4>
-                  <p className='text-gray-300 text-lg font-mono'>Set your assistant name and upload a profile image</p>
+                  <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>CONFIGURE ASSISTANT</h4>
+                  <p className='text-gray-300 text-sm font-mono'>Set your assistant name and upload a profile image</p>
                 </div>
               </div>
 
@@ -157,8 +157,8 @@ const Customise = () => {
                   3
                 </div>
                 <div>
-                  <h4 className='text-cyan-400 text-2xl font-mono font-bold mb-2'>VOICE ACTIVATION</h4>
-                  <p className='text-gray-300 text-lg font-mono'>Say your assistant's name followed by your command</p>
+                  <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>VOICE ACTIVATION</h4>
+                  <p className='text-gray-300 text-sm font-mono'>Say your assistant's name followed by your command</p>
                   <div className='mt-2 p-3 bg-slate-800/50 rounded-lg border border-cyan-400/30'>
                     <p className='text-cyan-400 font-mono text-xs'>Example: "{assistantName || 'Assistant'}, what's the weather today?"</p>
                   </div>
@@ -170,8 +170,8 @@ const Customise = () => {
                   4
                 </div>
                 <div>
-                  <h4 className='text-cyan-400 text-2xl font-mono font-bold mb-2'>ENJOY INTERACTION</h4>
-                  <p className='text-gray-300 text-lg font-mono'>Your AI assistant will respond with voice and text</p>
+                  <h4 className='text-cyan-400 text-xl font-mono font-bold mb-2'>ENJOY INTERACTION</h4>
+                  <p className='text-gray-300 text-sm font-mono'>Your AI assistant will respond with voice and text</p>
                 </div>
               </div>
             </div>
