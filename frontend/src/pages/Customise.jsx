@@ -178,7 +178,7 @@ const Customise = () => {
 
             <div className='mt-8 p-4 bg-cyan-900/20 border border-cyan-400/30 rounded-lg'>
               <h5 className='text-cyan-400 font-mono font-bold mb-2'>💡 TIP</h5>
-              <p className='text-gray-300 text-sm font-mono'>Make sure your microphone is enabled and speak clearly for best results</p>
+              <p className='text-gray-300 text-sm font-mono'>Make sure your microphone is enabled and speak clearly for best results. Ask e.g. Search Take Your Forward On Youtube , Whats The Weather Today? , Search for 'Mahi Singh JSSATE' On Chrome etc...</p>
             </div>
           </div>
         </div>
