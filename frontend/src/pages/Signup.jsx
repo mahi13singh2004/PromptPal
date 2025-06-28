@@ -98,11 +98,11 @@ const Signup = () => {
           <div className='w-1/2 h-auto overflow-hidden rounded-r-2xl'>
             <div className='w-full h-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center'>
               <div className='text-center'>
-                <div className='w-32 h-32 mx-auto mb-6 relative'>
-                  <div className='w-full h-full border-4 border-cyan-400 rounded-full animate-spin'></div>
-                  <div className='absolute inset-2 border-4 border-purple-400 rounded-full animate-spin-slow'></div>
-                  <div className='absolute inset-4 border-4 border-blue-400 rounded-full animate-pulse'></div>
-                </div>
+                <img
+                  src="https://cdn.dribbble.com/userupload/23131588/file/original-7170a735f9fbc50004dc5ece58421c06.gif"
+                  alt="AI Assistant"
+                  className='w-64 h-64 rounded-full mx-auto mb-6'
+                />
                 <h2 className='text-cyan-400 text-2xl font-mono font-bold'>AI ASSISTANT</h2>
                 <p className='text-gray-300 text-sm mt-2'>Voice-Enabled Intelligence</p>
               </div>
