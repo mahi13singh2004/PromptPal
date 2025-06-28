@@ -26,13 +26,11 @@ const Home = () => {
     const utterance = new SpeechSynthesisUtterance(text)
     utterance.lang = 'hi-IN'
 
-    // Pause speech recognition while speaking
     if (recognitionRef.current) {
       recognitionRef.current.stop()
       setIsSpeaking(true)
     }
 
-    // Function to speak with Hindi voice
     const speakWithHindiVoice = () => {
       const voices = window.speechSynthesis.getVoices()
       const hindiVoice = voices.find(v => v.lang === 'hi-IN')
@@ -47,15 +45,12 @@ const Home = () => {
       window.speechSynthesis.speak(utterance)
     }
 
-    // If voices are already loaded, speak immediately
     if (window.speechSynthesis.getVoices().length > 0) {
       speakWithHindiVoice()
     } else {
-      // Wait for voices to load
       window.speechSynthesis.onvoiceschanged = speakWithHindiVoice
     }
 
-    // Resume speech recognition after speaking
     utterance.onend = () => {
       setIsSpeaking(false)
       if (recognitionRef.current) {
@@ -66,8 +61,8 @@ const Home = () => {
 
   const handleCommand = (data) => {
     const { type, userInput, response } = data
-    setCurrentResponse(response) // Display response on screen
-    setIsGenerating(false) // Stop generating animation
+    setCurrentResponse(response) 
+    setIsGenerating(false) 
     speak(response)
 
     if (type == 'google-search') {
@@ -105,7 +100,6 @@ const Home = () => {
       recognition.lang = 'en-US'
 
       recognition.onresult = async (e) => {
-        // Don't process if assistant is speaking
         if (isSpeaking) {
           console.log('Assistant is speaking, ignoring input')
           return
@@ -113,16 +107,14 @@ const Home = () => {
 
         const transcript = e.results[e.results.length - 1][0].transcript.trim()
         console.log(transcript)
-        if (transcript.toLowerCase().includes(user.assistantName.toLowerCase())) {
-          setIsGenerating(true) // Start generating animation
+          setIsGenerating(true) 
           const data = await getGeminiResponse(transcript)
           console.log(data)
           if (data && data.response) {
             handleCommand(data)
           } else {
-            setIsGenerating(false) // Stop generating if no response
+            setIsGenerating(false) 
           }
-        }
       }
 
       recognition.start()
@@ -130,10 +122,8 @@ const Home = () => {
       console.log('Speech recognition started/restarted')
     }
 
-    // Start speech recognition
     startSpeechRecognition()
 
-    // Restart every 20 seconds
     const interval = setInterval(() => {
       console.log('Restarting speech recognition...')
       setIsRestarting(true)
@@ -159,7 +149,6 @@ const Home = () => {
 
   return (
     <div className='w-full h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center relative overflow-hidden'>
-      {/* Animated background elements */}
       <div className='absolute inset-0 opacity-20'>
         <div className='absolute top-20 left-20 w-2 h-2 bg-cyan-400 rounded-full animate-pulse'></div>
         <div className='absolute top-40 right-32 w-1 h-1 bg-purple-400 rounded-full animate-ping'></div>
@@ -167,7 +156,6 @@ const Home = () => {
         <div className='absolute bottom-20 right-20 w-2 h-2 bg-green-400 rounded-full animate-pulse'></div>
       </div>
 
-      {/* Top Navigation */}
       <div className='absolute top-6 right-6 flex gap-4 z-10'>
         <button
           onClick={() => setIsHistoryOpen(true)}
@@ -206,7 +194,6 @@ const Home = () => {
         </div>
       )}
 
-      {/* Main Content */}
       <div className='w-4/5 h-4/5 bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-sm rounded-2xl border border-cyan-400/30 shadow-2xl shadow-cyan-400/20 flex'>
         {/* Left Side - Assistant Info */}
         <div className='w-1/2 p-8 flex flex-col justify-center items-center'>
@@ -227,7 +214,6 @@ const Home = () => {
                 )}
               </div>
 
-              {/* Status GIFs */}
               <div className='mb-6'>
                 {isGenerating && (
                   <div className='text-center'>
@@ -255,7 +241,6 @@ const Home = () => {
           )}
         </div>
 
-        {/* Right Side - Response Display */}
         <div className='w-1/2 p-8 bg-gradient-to-br from-slate-700/50 to-slate-600/50 rounded-r-2xl border-l border-cyan-400/30 flex flex-col justify-center'>
           <h3 className='text-3xl font-bold text-center mb-6 text-cyan-400 font-mono tracking-wider'>ASSISTANT RESPONSE</h3>
 
@@ -274,7 +259,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* History Modal */}
       <History
         isOpen={isHistoryOpen}
         onClose={() => setIsHistoryOpen(false)}
